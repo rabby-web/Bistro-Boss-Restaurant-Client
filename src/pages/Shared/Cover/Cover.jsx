@@ -8,7 +8,7 @@ const Cover = ({ img, title }) => {
       bgImageAlt="Our Menu"
       strength={-200}
     >
-      <div className="hero h-[650px]">
+      <div className="hero h-[600px]">
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
@@ -18,7 +18,6 @@ const Cover = ({ img, title }) => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>
