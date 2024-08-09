@@ -4,11 +4,11 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const handleLogout =()=>{
+  const handleLogout = () => {
     logOut()
-    .then(()=>{})
-    .catch(error => console.log(error))
-  }
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   const navOptions = (
     <>
       <li>
@@ -20,10 +20,15 @@ const NavBar = () => {
       <li>
         <Link to="/order/salad">Order</Link>
       </li>
+      <li>
+        <Link to="/secret">Secret</Link>
+      </li>
 
       {user ? (
         <>
-          <button onClick={handleLogout} className="btn btn-ghost">Logout</button>
+          <button onClick={handleLogout} className="btn btn-ghost">
+            Logout
+          </button>
         </>
       ) : (
         <>

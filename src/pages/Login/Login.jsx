@@ -5,14 +5,16 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
-
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -29,10 +31,15 @@ const Login = () => {
       const user = result.user;
       console.log(user);
       Swal.fire({
-        title: "Good job!",
-        text: "Login successfully!",
-        icon: "success",
+        title: "User Login Successful.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
       });
+      navigate(from, { replace: true });
     });
   };
 
@@ -118,7 +125,7 @@ const Login = () => {
             <p className="text-center p-4">
               <small>
                 New Here?{" "}
-                <Link to="/sign-up" className="text-blue-600 underline">
+                <Link to="/signup" className="text-blue-600 underline">
                   Create an account
                 </Link>{" "}
               </small>
