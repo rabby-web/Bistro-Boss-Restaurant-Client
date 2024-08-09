@@ -16,9 +16,9 @@ const Login = () => {
   // from control
   const handleLogin = (event) => {
     event.preventDefault();
-    const from = event.target;
-    const email = from.email.value;
-    const password = from.password.value;
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
     console.log(email, password);
   };
 
