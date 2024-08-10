@@ -20,12 +20,12 @@ const Cart = () => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
           if (res.data.deleteCount > 0) {
+            refetch();
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
               icon: "success",
             });
-            refetch();
           }
         });
       }
