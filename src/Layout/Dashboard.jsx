@@ -1,6 +1,7 @@
 import {
   FaAd,
   FaCalendar,
+  FaGripHorizontal,
   FaHome,
   FaList,
   FaShoppingCart,
@@ -48,9 +49,24 @@ const Dashboard = () => {
               <FaList className="text-white"></FaList> <span>My Bookings</span>
             </Link>
           </li>
+          <div className="divider text-white border-white">OR</div>
+          {/* user home */}
+          <li className="text-white gap-2 bg-orange-600 rounded-md my-2">
+            <Link to="/">
+              <FaHome></FaHome>
+              <span>Home</span>
+            </Link>
+          </li>
+          {/* user home */}
+          <li className="text-white gap-2 bg-orange-600 rounded-md my-2">
+            <Link to="/order/salad">
+              <FaGripHorizontal></FaGripHorizontal>
+              <span>Menu</span>
+            </Link>
+          </li>
         </ul>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 p-8">
         <Outlet></Outlet>
       </div>
     </div>
