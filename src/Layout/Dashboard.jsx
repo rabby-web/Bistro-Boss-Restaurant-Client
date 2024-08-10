@@ -7,8 +7,10 @@ import {
   FaShoppingCart,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import useCarts from "../hooks/useCarts";
 
 const Dashboard = () => {
+  const [cart] = useCarts();
   return (
     <div className="flex">
       <div className="w-72 min-h-screen bg-orange-400 border-l-4 border-r-2 border-orange-600">
@@ -34,7 +36,7 @@ const Dashboard = () => {
           <li className="text-white gap-2 bg-orange-600 rounded-md my-2">
             <Link to="/dashboard/cart">
               <FaShoppingCart className="text-white"></FaShoppingCart>{" "}
-              <span>My Cart</span>
+              <span>My Cart ({cart.length})</span>
             </Link>
           </li>
           {/* cart */}
