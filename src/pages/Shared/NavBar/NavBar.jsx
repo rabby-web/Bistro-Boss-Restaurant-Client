@@ -27,6 +27,9 @@ const NavBar = () => {
         <Link to="/secret">Secret</Link>
       </li>
       <li>
+        <Link to="/secret2">Secret2</Link>
+      </li>
+      <li>
         <Link to="/dashboard/cart">
           <button className="btn">
             <FaShoppingCart></FaShoppingCart>
