@@ -2,6 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCarts from "../../../hooks/useCarts";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { FaCcStripe } from "react-icons/fa";
 
 const Cart = () => {
   const [cart, refetch] = useCarts();
@@ -39,7 +40,10 @@ const Cart = () => {
       <div className="flex justify-around text-xl p-4">
         <h2>Total Items: {cart.length}</h2>
         <h2>Total Price: {totalPrice}</h2>
-        <button className="btn bg-orange-600 text-white">Pay Now</button>
+        <button className="btn bg-orange-600 text-white gap-2 flex">
+          <FaCcStripe />
+          Pay Now
+        </button>
       </div>
       <div>
         <div className="overflow-x-auto">
