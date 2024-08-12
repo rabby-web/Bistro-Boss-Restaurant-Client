@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
-  const { data: users = [] } = useQuery({
+  const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axiosSecure.get("/users");
@@ -12,8 +13,36 @@ const AllUsers = () => {
     },
   });
 
+  //  handle make admin
+  const handleMakeAdmin = () => {
+    // todo: handle make admin
+  };
+
   // handle delete
-  const handleDeleteUsers = () => {};
+  const handleDeleteUsers = (user) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/users/${user._id}`).then((res) => {
+          if (res.data.deleteCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
   return (
     <div>
       <div className="flex justify-around text-3xl font-medium p-3 text-orange-600">
@@ -43,7 +72,7 @@ const AllUsers = () => {
                   <td>
                     {" "}
                     <button
-                      onClick={() => handleDeleteUsers(users)}
+                      onClick={() => handleMakeAdmin(users)}
                       className="btn btn-ghost btn-sm bg-orange-600"
                     >
                       <FaUsers className="text-2xl text-white m-1"></FaUsers>
