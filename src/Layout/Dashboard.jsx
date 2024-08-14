@@ -12,11 +12,13 @@ import {
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import useCarts from "../hooks/useCarts";
+import useAdmin from "../hooks/useAdmin";
 // import { FaVoicemail } from "react-icons/fa6";
 
 const Dashboard = () => {
   const [cart] = useCarts();
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+  // const isAdmin = true;
   return (
     <div className="flex">
       <div className="w-72 min-h-screen bg-orange-400 border-l-4 border-r-2 border-orange-600">
