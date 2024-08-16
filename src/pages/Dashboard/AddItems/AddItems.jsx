@@ -1,10 +1,26 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaUtensils } from "react-icons/fa";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddItems = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const axiosPublic = useAxiosPublic();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    // image upload to image bb and then get an url
+    const imageFile = { image: data.image[0] };
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
+    console.log(res.data);
+  };
   return (
     <div>
       <SectionTitle heading="add an item" subHeading="whats new"></SectionTitle>
@@ -33,10 +49,11 @@ const AddItems = () => {
                 <span className="label-text">Category</span>
               </div>
               <select
+                defaultValue="default"
                 className="select select-ghost input-bordered w-full "
                 {...register("category", { required: true })}
               >
-                <option disabled selected>
+                <option disabled value="default">
                   Select a category
                 </option>
                 <option value="salade">Salade</option>
