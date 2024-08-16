@@ -12,9 +12,18 @@ const CheckoutFrom = () => {
     if (card == null) {
       return;
     }
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card,
+    });
+    if (error) {
+      console.log("[error]", error);
+    } else {
+      console.log("[paymentMethod]", paymentMethod);
+    }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="border rounded p-4">
       <CardElement
         options={{
           style: {
@@ -32,10 +41,16 @@ const CheckoutFrom = () => {
         }}
       >
         {" "}
-        <button type="submit" disabled={!stripe}>
+      </CardElement>
+      <div className="">
+        <button
+          className="text-xl bg-orange-500 text-white px-5 py-2 rounded-md flex mx-auto m-5"
+          type="submit"
+          //   disabled={!stripe}
+        >
           Pay
         </button>
-      </CardElement>
+      </div>
     </form>
   );
 };
