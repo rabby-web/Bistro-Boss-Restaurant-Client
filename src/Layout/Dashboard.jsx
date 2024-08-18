@@ -70,9 +70,9 @@ const Dashboard = () => {
               </li>
               {/* Reservation */}
               <li className="text-white gap-2 bg-orange-600 rounded-md my-2">
-                <Link to="/dashboard/reservation">
+                <Link to="/dashboard/history">
                   <FaCalendar></FaCalendar>
-                  <span>Reservation</span>
+                  <span>Payment History</span>
                 </Link>
               </li>
               {/* cart */}
