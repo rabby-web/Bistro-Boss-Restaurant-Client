@@ -34,13 +34,14 @@ const PaymentHistory = () => {
               </tr>
             </thead>
             <tbody>
-              {/* row 1 */}
-              {/* <tr>
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
-              </tr> */}
+              {payments.map((payment, index) => (
+                <tr key={payment._id}>
+                  <th>{index + 1}</th>
+                  <td>${payment.price}</td>
+                  <td>{payment.transactionId}</td>
+                  <td>{payment.status}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
