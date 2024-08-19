@@ -1,4 +1,3 @@
-import img2 from "../../../assets/home/chef-service.jpg";
 const BistroBoss = () => {
   return (
     <div className="bg-[url('https://i.ibb.co/zmQvryn/autumn-leaf-falling-revealing-intricate-leaf-vein-generated-by-ai.jpg')] bg-cover bg-center bg-no-repeat h-400">

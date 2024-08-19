@@ -7,6 +7,7 @@ import Featured from "../Featured/Featured";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Testimonials from "../Testimonials/Testimonials";
 import BistroBoss from "../BistroBoss/BistroBoss";
+import Contract from "../Contract/Contract";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <BistroBoss></BistroBoss>
       <PopularMenu></PopularMenu>
       <Featured></Featured>
+      <Contract></Contract>
       <Testimonials></Testimonials>
     </>
   );
