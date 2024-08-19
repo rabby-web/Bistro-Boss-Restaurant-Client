@@ -1,5 +1,5 @@
 # Bistro Boss- Restaurant Management MERN Web App
-## Live link: https://bistro-boss-restaurant-mern.web.app/
+## Live link: https://bistro-boss-auth-b7b22.web.app/
 
 <a href="https://bistro-boss-restaurant-mern.web.app/">
   <img src="https://github.com/TrishonBaidaya7399/Bistro-Boss-Restaurant-client/blob/main/Screenshot%202023-12-08%20203513.jpg?raw=true" />
