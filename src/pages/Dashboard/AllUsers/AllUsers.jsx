@@ -37,7 +37,7 @@ const AllUsers = () => {
   const handleDeleteUsers = (user) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You won't be able to revert!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -61,7 +61,7 @@ const AllUsers = () => {
   return (
     <div>
       <div className="flex justify-around text-3xl font-medium p-3 text-orange-600">
-        <h2> All Users</h2>
+        <h2>All Users</h2>
         <h2>Total Users: {users.length}</h2>
       </div>
       <div>
@@ -70,7 +70,7 @@ const AllUsers = () => {
             {/* head */}
             <thead>
               <tr className="text-xl font-medium">
-                <th>##</th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
@@ -91,7 +91,7 @@ const AllUsers = () => {
                     ) : (
                       <button
                         onClick={() => handleMakeAdmin(users)}
-                        className="btn btn-ghost btn-sm bg-orange-600"
+                        className="btn btn-ghost btn-sm bg-orange-700"
                       >
                         <FaUsers className="text-2xl text-white m-1"></FaUsers>
                       </button>

@@ -141,7 +141,7 @@ const AdminHome = () => {
       </div>
       {/* chart */}
       <div className="flex">
-        {/* 1 */}
+        {/* 1 section 1 */}
         <div className="w-1/2">
           <BarChart
             width={500}
@@ -169,7 +169,7 @@ const AdminHome = () => {
             </Bar>
           </BarChart>
         </div>
-        {/* 2 */}
+        {/* 2 section 2 */}
         <div className="w-1/2">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={400} height={400}>
