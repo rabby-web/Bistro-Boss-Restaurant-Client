@@ -21,7 +21,7 @@ const Dashboard = () => {
   // const isAdmin = true;
   return (
     <div className="flex">
-      <div className="w-72 min-h-screen bg-orange-400 border-l-4 border-r-2 border-orange-600">
+      <div className="w-72 min-h-screen bg-orange-400 border-l-4 border-r-2 border-orange-700">
         <h2 className="text-center mt-8 text-2xl font-bold text-white border-b-4 mx-6 py-3 border-orange-600 rounded-lg hover:bg-orange-600">
           User Dashboard
         </h2>
@@ -53,7 +53,7 @@ const Dashboard = () => {
                   <span>Manage Bookings</span>
                 </Link>
               </li>
-              <li className="text-white gap-2 bg-orange-600 rounded-md my-2">
+              <li className="text-white gap-2 bg-orange-700 rounded-md my-2">
                 <Link to="/dashboard/users">
                   <FaUsers></FaUsers>
                   <span>All Users</span>
